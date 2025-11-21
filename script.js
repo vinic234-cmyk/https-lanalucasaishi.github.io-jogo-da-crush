@@ -2,22 +2,28 @@ const heart = document.getElementById("heartBtn");
 const choices = document.getElementById("choices");
 const msg = document.getElementById("msgBox");
 const foto = document.getElementById("foto");
+const btnNao = document.getElementById("btnNao"); // botão NÃO
 
-function randomPosition() {
-    const maxX = window.innerWidth - 150;
-    const maxY = window.innerHeight - 80;
-
-    heart.style.left = Math.random() * maxX + "px";
-    heart.style.top  = Math.random() * maxY + "px";
-}
-
-heart.addEventListener("mouseover", randomPosition);
-
+// Clicar no coração abre as escolhas
 heart.addEventListener("click", () => {
     heart.style.display = "none";
     choices.style.display = "block";
 });
 
+// Botão NÃO começa a fugir só depois que aparecer
+function randomPosition() {
+    const maxX = window.innerWidth - 100;
+    const maxY = window.innerHeight - 60;
+
+    btnNao.style.position = "absolute";
+    btnNao.style.left = Math.random() * maxX + "px";
+    btnNao.style.top  = Math.random() * maxY + "px";
+}
+
+// Quando passar o mouse no NÃO → ele foge ❤‍🔥
+btnNao.addEventListener("mouseover", randomPosition);
+
+// Botão SIM → mensagem final
 function showLove() {
     choices.style.display = "none";
     msg.style.display = "block";
