@@ -9,7 +9,7 @@ body {
 #background {
     position: fixed;
     inset: 0;
-    background: url('https://i.imgur.com/hsDVz5X.jpeg') center/cover no-repeat;
+    background: url(foto.jpg) center/cover no-repeat;
     filter: brightness(0.7);
     z-index: -2;
 }
